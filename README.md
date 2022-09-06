@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Purple Dealership
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Our project will be call the purple dealership. This will be a store front website for a car dealership. A customer will be able to come to the site to see a the dealership inventory. The customer will also be able to click on the car to get more information. The dealership will be able to login and be authenticated. Then the dealership will be able to CRUD the inventory. We will make an API request to a third party to get cars information.
 
-In the project directory, you can run:
+## User Stories
 
-### `npm start`
+1. As a consumer, I want to see an inventory of the cars
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+       images of the cars are large and easy to see 
+       carousel style presentation
+       present detailed car information 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. As a consumer, I want to easily navigate the website
 
-### `npm test`
+       nice, big buttons
+       obvious link locations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. As a client, I want to add vehicles to my homepage
 
-### `npm run build`
+       easily add new cars to the homepage
+       updates the car info without extra effort
+       an option to upload images
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. As a client, I want to have a secure login
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+       use an authorization/authentication protocol to verify employees
+       simple to use interface
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. As a client, I want the consumer to easily contact the dealership to inquire for more info
 
-### `npm run eject`
+       an obvious 'contact us' location
+       links to send an email
+       phone provided
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. As a consumer, I want to easily be able to contact the dealership
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+       to schedule an appointment to view the car
+       to inquire more information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Wireframing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Wireframe #1
+![wf1](img/wireframe1.jpg)
 
-## Learn More
+wireframe #2
+![wf2](img/wireframe2.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+UML
+![UML](/img/UML.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Schema
 
-### Code Splitting
+      const carSchema = new Schema({
+      make: { type: String, required: true },
+      model: { type: String, required: true },
+      year: { type: Number, required: true },
+      car_img: { type: URL, required: false },
+      cylinders: { type: Number, required: false },
+      highway_mpg: { type: Number, required: false },
+      city_mpg: { type: Number, required: false },
+      combination_mpg: { type: Number, required: false },
+      drive: { type: String, required: false },
+      transmission: { type: String, required: false },
+      class: { type: String, required: false },
+      displacement: { type: Number, required: false },
+      fuel_type: { type: String, required: false },
+    });
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Team Members
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- David Suy
+- Carlos Herrera
+- Jefferey Smith
