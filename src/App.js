@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import Header from './components/Header';
+import SiteNav from './components/SiteNav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import CarModal from './components/CarModal';
 
 const SERVER = process.env.REACT_APP_SERVER;
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -56,8 +59,10 @@ class App extends React.Component {
 
   render() {
     return (
+      
       <>
-        <h1>Purple dealership</h1>
+        <SiteNav/>
+        <h1>Purple dealership</h1>;
         <Header />
         <Main
           featuredCars={this.state.featuredCars}
@@ -71,6 +76,7 @@ class App extends React.Component {
         />
         <Footer />
       </>
+     
     );
   }
 }
