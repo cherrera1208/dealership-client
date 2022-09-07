@@ -62,6 +62,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+
         {this.props.auth0.isAuthenticated
           ? <LogoutButton />
           : <LoginButton />
@@ -70,8 +71,8 @@ class App extends React.Component {
           ? <Profile />
           : <h2>Please Login</h2>
         }
-        <SiteNav />
-        <h1>Purple dealership</h1>;
+        <SiteNav/>
+
         <Header />
         <Main
           featuredCars={this.state.featuredCars}

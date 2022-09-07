@@ -1,0 +1,19 @@
+.btn-container{
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.btn {
+color: blueviolet;
+background-color: #E8F9FD;
+font-weight: bold;
+}
+
+.btn:hover {
+  background-color: blueviolet;
+  font-weight: bold;
+
+  }
+
+ 
