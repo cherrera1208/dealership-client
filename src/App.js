@@ -1,3 +1,4 @@
+import { withAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import axios from 'axios';
 import Header from './components/Header';
@@ -6,6 +7,9 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import CarModal from './components/CarModal';
 import CarForm from './components/CarForm';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import Profile from './components/Profile';
 
 const SERVER = process.env.REACT_APP_SERVER;
 
@@ -70,8 +74,9 @@ class App extends React.Component {
   render() {
     return (
       <>
+        {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
+        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>}
         <SiteNav />
-        <h1>Purple dealership</h1>;
         <Header />
         <Main
           featuredCars={this.state.featuredCars}
@@ -93,4 +98,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuth0(App);

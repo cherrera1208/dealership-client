@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
   padding: 80px 60px;
-  background: black;
-  // position: absolute;
+
+  background: #9fc9f3;
+
   bottom: 0;
   width: 100%;
 
@@ -45,7 +46,7 @@ export const FooterLink = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: purple;
+    color: #a460ed;
     transition: 200ms ease-in;
   }
 `;
