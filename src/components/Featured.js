@@ -7,7 +7,7 @@ class Featured extends React.Component {
     const featuredCars = this.props.featuredCars;
     let cars = featuredCars.map((car, idx) => {
       return (
-        <Carousel.Item key={idx}>
+        <Carousel.Item key={idx} onClick={() => this.props.handleCarClick(car)}>
           <img className='w-100' src={car.car_img} alt='car' />
           <Carousel.Caption>
             <h3>{`${car.make} ${car.model}`}</h3>

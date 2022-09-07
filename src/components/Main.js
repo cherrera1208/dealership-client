@@ -7,8 +7,14 @@ class Main extends React.Component {
     return (
       <>
         <h1>Main</h1>
-        <Featured featuredCars={this.props.featuredCars} />
-        <Cars carsInventory={this.props.carsInventory} />
+        <Featured
+          featuredCars={this.props.featuredCars}
+          handleCarClick={this.props.handleCarClick}
+        />
+        <Cars
+          carsInventory={this.props.carsInventory}
+          handleCarClick={this.props.handleCarClick}
+        />
       </>
     );
   }

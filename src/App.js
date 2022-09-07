@@ -1,8 +1,9 @@
 import React from 'react';
+import axios from 'axios';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import axios from 'axios';
+import CarModal from './components/CarModal';
 
 const SERVER = process.env.REACT_APP_SERVER;
 
@@ -12,6 +13,8 @@ class App extends React.Component {
     this.state = {
       featuredCars: [],
       carsInventory: [],
+      showCarModal: false,
+      carModal: {},
     };
   }
 
@@ -30,6 +33,23 @@ class App extends React.Component {
     }
   };
 
+  handleCarModal = (show) => {
+    show
+      ? this.setState({
+          showCarModal: true,
+        })
+      : this.setState({
+          showCarModal: false,
+        });
+  };
+
+  handleCarClick = (car) => {
+    this.handleCarModal(true);
+    this.setState({
+      carModal: car,
+    });
+  };
+
   componentDidMount() {
     this.getCars();
   }
@@ -42,6 +62,12 @@ class App extends React.Component {
         <Main
           featuredCars={this.state.featuredCars}
           carsInventory={this.state.carsInventory}
+          handleCarClick={this.handleCarClick}
+        />
+        <CarModal
+          handleCarModal={this.handleCarModal}
+          showCarModal={this.state.showCarModal}
+          carModal={this.state.carModal}
         />
         <Footer />
       </>
