@@ -5,10 +5,9 @@ import SiteNav from './components/SiteNav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import CarModal from './components/CarModal';
+import CarForm from './components/CarForm';
 
 const SERVER = process.env.REACT_APP_SERVER;
-
-
 
 class App extends React.Component {
   constructor(props) {
@@ -17,6 +16,7 @@ class App extends React.Component {
       featuredCars: [],
       carsInventory: [],
       showCarModal: false,
+      showCarFormModal: false,
       carModal: {},
     };
   }
@@ -46,6 +46,16 @@ class App extends React.Component {
         });
   };
 
+  handleCarFormModal = (show) => {
+    show
+      ? this.setState({
+          showCarFormModal: true,
+        })
+      : this.setState({
+          showCarFormModal: false,
+        });
+  };
+
   handleCarClick = (car) => {
     this.handleCarModal(true);
     this.setState({
@@ -59,9 +69,8 @@ class App extends React.Component {
 
   render() {
     return (
-      
       <>
-        <SiteNav/>
+        <SiteNav />
         <h1>Purple dealership</h1>;
         <Header />
         <Main
@@ -74,9 +83,12 @@ class App extends React.Component {
           showCarModal={this.state.showCarModal}
           carModal={this.state.carModal}
         />
+        <CarForm
+          showCarFormModal={this.state.showCarFormModal}
+          handleCarFormModal={this.handleCarFormModal}
+        />
         <Footer />
       </>
-     
     );
   }
 }

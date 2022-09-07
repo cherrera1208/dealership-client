@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/index.css';
 import App from './App';
+import About from './components/About.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />}></Route>
+        <Route path='/about' element={<About />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
