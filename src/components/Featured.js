@@ -1,13 +1,13 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import '../css/Featured.css';
 
 class Featured extends React.Component {
   render() {
     const featuredCars = this.props.featuredCars;
-    console.log(featuredCars);
-    let cars = featuredCars.map((car) => {
+    let cars = featuredCars.map((car, idx) => {
       return (
-        <Carousel.Item>
+        <Carousel.Item key={idx} onClick={() => this.props.handleCarClick(car)}>
           <img className='w-100' src={car.car_img} alt='car' />
           <Carousel.Caption>
             <h3>{`${car.make} ${car.model}`}</h3>
@@ -16,7 +16,12 @@ class Featured extends React.Component {
         </Carousel.Item>
       );
     });
-    return <Carousel>{cars}</Carousel>;
+    return (
+      <>
+        <h2>Featured Cars</h2>
+        <Carousel>{cars}</Carousel>;
+      </>
+    );
   }
 }
 
