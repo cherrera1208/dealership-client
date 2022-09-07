@@ -6,6 +6,7 @@ import SiteNav from './components/SiteNav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import CarModal from './components/CarModal';
+import CarForm from './components/CarForm';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
@@ -19,6 +20,7 @@ class App extends React.Component {
       featuredCars: [],
       carsInventory: [],
       showCarModal: false,
+      showCarFormModal: false,
       carModal: {},
     };
   }
@@ -41,11 +43,21 @@ class App extends React.Component {
   handleCarModal = (show) => {
     show
       ? this.setState({
-        showCarModal: true,
-      })
+          showCarModal: true,
+        })
       : this.setState({
-        showCarModal: false,
-      });
+          showCarModal: false,
+        });
+  };
+
+  handleCarFormModal = (show) => {
+    show
+      ? this.setState({
+          showCarFormModal: true,
+        })
+      : this.setState({
+          showCarFormModal: false,
+        });
   };
 
   handleCarClick = (car) => {
@@ -62,17 +74,9 @@ class App extends React.Component {
   render() {
     return (
       <>
-
-        {this.props.auth0.isAuthenticated
-          ? <LogoutButton />
-          : <LoginButton />
-        };
-        {this.props.auth0.isAuthenticated
-          ? <Profile />
-          : <h2>Please Login</h2>
-        }
-        <SiteNav/>
-
+        {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
+        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>}
+        <SiteNav />
         <Header />
         <Main
           featuredCars={this.state.featuredCars}
@@ -84,9 +88,12 @@ class App extends React.Component {
           showCarModal={this.state.showCarModal}
           carModal={this.state.carModal}
         />
+        <CarForm
+          showCarFormModal={this.state.showCarFormModal}
+          handleCarFormModal={this.handleCarFormModal}
+        />
         <Footer />
       </>
-
     );
   }
 }
