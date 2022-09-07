@@ -6,7 +6,7 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <h1>Main</h1>
+        
         <Featured
           featuredCars={this.props.featuredCars}
           handleCarClick={this.props.handleCarClick}

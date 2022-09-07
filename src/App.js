@@ -62,7 +62,6 @@ class App extends React.Component {
       
       <>
         <SiteNav/>
-        <h1>Purple dealership</h1>;
         <Header />
         <Main
           featuredCars={this.state.featuredCars}
