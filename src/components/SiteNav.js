@@ -16,7 +16,7 @@ class SiteNav extends React.Component {
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               alt=""
               //TODO: this img is broken
