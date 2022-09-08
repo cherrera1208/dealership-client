@@ -43,7 +43,6 @@ class CarForm extends React.Component {
 
     return (
       <>
-        
         <Modal show={showCarForm} onHide={handleCarFormModal}>
           <Modal.Header closeButton>
             <Modal.Title>Add Car</Modal.Title>
@@ -109,6 +108,10 @@ class CarForm extends React.Component {
               <Form.Group controlId='fuel'>
                 <Form.Label>Fuel type</Form.Label>
                 <Form.Control type='text' placeholder='e.g. gasoline' />
+              </Form.Group>
+              <Form.Group controlId='color'>
+                <Form.Label>Color</Form.Label>
+                <Form.Control type='text' placeholder='e.g. red' />
               </Form.Group>
               <Form.Group controlId='price'>
                 <Form.Label>Price</Form.Label>

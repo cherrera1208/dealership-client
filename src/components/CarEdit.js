@@ -115,6 +115,10 @@ class CarEdit extends React.Component {
                 <Form.Label>Fuel type</Form.Label>
                 <Form.Control type='text' placeholder='e.g. gasoline' />
               </Form.Group>
+              <Form.Group controlId='color'>
+                <Form.Label>Color</Form.Label>
+                <Form.Control type='text' placeholder='e.g. red' />
+              </Form.Group>
               <Form.Group controlId='price'>
                 <Form.Label>Price</Form.Label>
                 <Form.Control type='number' placeholder='e.g. $30,000' />
