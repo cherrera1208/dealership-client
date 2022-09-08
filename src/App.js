@@ -80,8 +80,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
-        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>}
+        {/* {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
+        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>} */}
         <SiteNav />
         <Header />
         <Main

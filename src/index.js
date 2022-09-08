@@ -6,6 +6,7 @@ import './css/index.css';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import About from './components/About.js';
+import SiteNav from './components/SiteNav';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
