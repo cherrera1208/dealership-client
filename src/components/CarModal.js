@@ -24,7 +24,6 @@ class CarModal extends React.Component {
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => handleCarModal(false)}>Close</Button>
-          <Button>Save Changes</Button>
         </Modal.Footer>
       </Modal>
     );

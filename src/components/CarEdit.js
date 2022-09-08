@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Image, Modal } from 'react-bootstrap';
 
-class CarForm extends React.Component {
+class CarEdit extends React.Component {
   // handleChange = (e) => {
   // console.log(e.target.value);
   // this.setState({
@@ -12,7 +12,7 @@ class CarForm extends React.Component {
   render() {
     let handleSubmit = (e) => {
       e.preventDefault();
-      handleCarFormModal();
+      // handleCarFormModal();
 
       let newCar = {
         make: e.target.make.value,
@@ -36,19 +36,24 @@ class CarForm extends React.Component {
       this.props.handleCarSubmit(newCar);
     };
 
-    const showCarForm = this.props.showCarFormModal;
-    const handleCarFormModal = () => {
-      this.props.handleCarFormModal(false);
+    let curCar = this.props.carModal;
+    const showCarEditModal = this.props.showCarEditModal;
+    const handleCarEditModal = () => {
+      this.props.handleCarEditModal(false);
+    };
+    const handleDelete = () => {
+      this.props.handleCarDelete(curCar);
+      handleCarEditModal();
     };
 
     return (
       <>
-        
-        <Modal show={showCarForm} onHide={handleCarFormModal}>
+        <Modal show={showCarEditModal} onHide={handleCarEditModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Car</Modal.Title>
+            <Modal.Title>Edit Car</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            <Image className='w-100' src={curCar.car_img} />
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId='make' required>
                 <Form.Label>Make</Form.Label>
@@ -124,17 +129,22 @@ class CarForm extends React.Component {
               <Form.Group controlId='featured'>
                 <Form.Check type='checkbox' label='Featured' />
               </Form.Group>
-              <Modal.Footer>
-                <Button variant='primary' type='submit'>
-                  Add Car
-                </Button>
-              </Modal.Footer>
             </Form>
           </Modal.Body>
+          <Modal.Footer>
+            <Button>Save Changes</Button>
+            <Button
+              // onClick={() => this.props.handleCarDelete(curCar)}
+              onClick={handleDelete}
+              style={{ backgroundColor: 'red', color: 'black' }}
+            >
+              Delete Car
+            </Button>
+          </Modal.Footer>
         </Modal>
       </>
     );
   }
 }
 
-export default CarForm;
+export default CarEdit;
