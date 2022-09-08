@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
 import LoginButton from './LoginButton';
+import { Button } from 'react-bootstrap';
 import '../css/SiteNav.css';
 
 class SiteNav extends React.Component {
@@ -18,19 +18,21 @@ class SiteNav extends React.Component {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link href='#features'>About</Nav.Link>
-              <Nav.Link href='#pricing'>Car Inventory</Nav.Link>
-              <Nav.Link href='#contact'>Contact Use</Nav.Link>
+              <Nav.Link href='http://localhost:3000/about'>About</Nav.Link>
+              <Nav.Link href='http://localhost:3000'>Car Inventory</Nav.Link>
+              <Nav.Link href='#http://localhost:3000'>Contact Use</Nav.Link>
               <NavDropdown title='Dropdown' id='collasible-nav-dropdown'>
-                <NavDropdown.Item href='#action/3.1'>About</NavDropdown.Item>
-                <NavDropdown.Item href='#action/3.2'>
+                <NavDropdown.Item href='http://localhost:3000/about'>
+                  About
+                </NavDropdown.Item>
+                <NavDropdown.Item href='http://localhost:3000/'>
                   Car Inventory
                 </NavDropdown.Item>
-                <NavDropdown.Item href='#action/3.3'>
+                <NavDropdown.Item href='http://localhost:3000/'>
                   Contact Info
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href='#action/3.4'>
+                <NavDropdown.Item href='http://localhost:3000/about'>
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown>

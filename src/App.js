@@ -23,7 +23,7 @@ class App extends React.Component {
       showCarModal: false,
       showCarFormModal: false,
       showCarEditModal: false,
-      editMode: true,
+      editMode: false,
       carModal: {},
     };
   }
