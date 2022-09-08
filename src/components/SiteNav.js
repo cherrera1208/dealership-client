@@ -7,7 +7,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import { Button } from 'react-bootstrap';
-import Image from 'react-bootstrap/Image'
 import '../css/SiteNav.css';
 
 class SiteNav extends React.Component {
@@ -18,10 +17,10 @@ class SiteNav extends React.Component {
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
           <Navbar.Brand href="#home">
-            <Image
+            <img
               alt=""
               //TODO: this img is broken
-              src="../image/sports-car.png"
+              src="../image/sports-car-small.png"
               width="30"
               height="30"
               className="d-inline-block align-top"

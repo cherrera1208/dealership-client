@@ -1,12 +1,10 @@
 import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/index.css';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import About from './components/About.js';
-import SiteNav from './components/SiteNav';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

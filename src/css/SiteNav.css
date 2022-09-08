@@ -9,7 +9,8 @@
 
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF1B6B", endColorstr="#45CAFF", GradientType=1);
   border-radius: 0px;
-  margin: .25rem;
+  margin: .30rem;
+  border: 1px solid black;
 }
 
 .btn-container {
