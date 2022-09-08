@@ -28,7 +28,6 @@ class SiteNav extends React.Component {
             />{' '}
             React Bootstrap
           </Navbar.Brand>
-          {/* <Navbar.Brand href='#home'>Purple Dealership</Navbar.Brand> */}
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>

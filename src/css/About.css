@@ -10,10 +10,28 @@ body
   align-content: center;
   flex-wrap: wrap;
   color: blue;
+  
 }
 
 .card-container {
   display: flex;
   justify-content: space-between;
-  height: 100;
+  
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.card-img-top {
+  position: absolute;
+  height: relative;
+}
+
+.accordion {
+  position: absolute;
+  top: 380px;
+  width: 100%;
+}
+
