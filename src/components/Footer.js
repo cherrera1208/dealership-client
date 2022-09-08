@@ -6,7 +6,7 @@ import {
   Column,
   FooterLink,
   Heading,
-  FooterText,
+  
   } from "./FooterStyles";
   
 const Footer = () => {
@@ -80,14 +80,9 @@ const Footer = () => {
             </FooterLink>
             </Column>
         </Row>
-        <FooterText>
-        <span style={{ color: 'purple' }}>&copy; Purple Dealership.</span> 
-        </FooterText>
-        </Container>
-        
-        
+      </Container>
     </Box>
-    
+
   );
 };
 export default Footer;

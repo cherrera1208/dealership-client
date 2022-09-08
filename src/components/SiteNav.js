@@ -14,7 +14,7 @@ class SiteNav extends React.Component {
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='#home'>Purple Dealership</Navbar.Brand>
+          <Navbar.Brand href='/'>Purple Dealership</Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
