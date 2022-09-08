@@ -109,7 +109,7 @@ class CarEdit extends React.Component {
               </Form.Group>
               <Form.Group controlId='displacement'>
                 <Form.Label>Displacement</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 1.3' />
+                <Form.Control type='text' placeholder='e.g. 1.3' />
               </Form.Group>
               <Form.Group controlId='fuel'>
                 <Form.Label>Fuel type</Form.Label>
