@@ -29,10 +29,10 @@ body {
   justify-content: center;
 }
 
-.card-img-top {
+/* .card-img-top {
   position: absolute;
   height: relative;
-}
+} */
 
 .accordion {
   position: absolute;
