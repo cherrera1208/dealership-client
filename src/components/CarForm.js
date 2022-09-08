@@ -29,10 +29,12 @@ class CarForm extends React.Component {
         class: e.target.class.value,
         displacement: e.target.displacement.value,
         fuel: e.target.fuel.value,
+        color: e.target.color.value,
         price: e.target.price.value,
         description: e.target.description.value,
         featured: e.target.featured.checked,
       };
+      console.log(newCar);
       this.props.handleCarSubmit(newCar);
     };
 
@@ -103,7 +105,7 @@ class CarForm extends React.Component {
               </Form.Group>
               <Form.Group controlId='displacement'>
                 <Form.Label>Displacement</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 1.3' />
+                <Form.Control type='text' placeholder='e.g. 1.3' />
               </Form.Group>
               <Form.Group controlId='fuel'>
                 <Form.Label>Fuel type</Form.Label>
