@@ -39,7 +39,7 @@ class App extends React.Component {
 
       return result;
     } catch (error) {
-      console.log('we have an error: ', error.response.data);
+      console.log('we have an error: ', error.response);
     }
   };
 
@@ -48,36 +48,36 @@ class App extends React.Component {
   handleCarModal = (show) => {
     show
       ? this.setState({
-          showCarModal: true,
-        })
+        showCarModal: true,
+      })
       : this.setState({
-          showCarModal: false,
-        });
+        showCarModal: false,
+      });
   };
 
   handleCarEditModal = (show) => {
     show
       ? this.setState({
-          showCarEditModal: true,
-        })
+        showCarEditModal: true,
+      })
       : this.setState({
-          showCarEditModal: false,
-        });
+        showCarEditModal: false,
+      });
   };
 
   handleCarFormModal = (show) => {
     show
       ? this.setState({
-          showCarFormModal: true,
-        })
+        showCarFormModal: true,
+      })
       : this.setState({
-          showCarFormModal: false,
-        });
+        showCarFormModal: false,
+      });
   };
 
   handleCarClick = (car) => {
-    let editMode = this.state.editMode;
-    editMode ? this.handleCarEditModal(true) : this.handleCarModal(true);
+    // let editMode = this.state.editMode;
+    this.props.auth0.isAuthenticated ? this.handleCarEditModal(true) : this.handleCarModal(true);
     this.setState({
       carModal: car,
     });
@@ -118,12 +118,16 @@ class App extends React.Component {
   }
 
   render() {
+    let editMode = false;
+    if (this.props.auth0.isAuthenticated) {
+      editMode = true;
+    }
     return (
       <>
         {/* {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
         {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>} */}
         <SiteNav
-          editMode={this.state.editMode}
+          editMode={editMode}
           handleCarFormModal={this.handleCarFormModal}
         />
         <Header />
@@ -131,6 +135,7 @@ class App extends React.Component {
           featuredCars={this.state.featuredCars}
           carsInventory={this.state.carsInventory}
           handleCarClick={this.handleCarClick}
+        // editMode={editMode}
         />
         <CarModal
           handleCarModal={this.handleCarModal}
@@ -147,7 +152,7 @@ class App extends React.Component {
           showCarEditModal={this.state.showCarEditModal}
           handleCarEditModal={this.handleCarEditModal}
           handleCarDelete={this.handleCarDelete}
-          // handleCarEdit={this.handleCarEdit}
+        // handleCarEdit={this.handleCarEdit}
         />
         <Footer />
       </>

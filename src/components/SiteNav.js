@@ -1,10 +1,13 @@
 import React from 'react';
+import { withAuth0 } from '@auth0/auth0-react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 import { Button } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image'
 import '../css/SiteNav.css';
 
 class SiteNav extends React.Component {
@@ -14,7 +17,17 @@ class SiteNav extends React.Component {
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <Navbar.Brand href='/'>Purple Dealership</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Image
+              alt=""
+              //TODO: this img is broken
+              src="../image/sports-car.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            React Bootstrap
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
@@ -44,11 +57,13 @@ class SiteNav extends React.Component {
                     Add Car
                   </Button>
                 ) : (
-                  <></>
+                  this.props.auth0.isAuthenticated
+                    ? <LogoutButton />
+                    : <LoginButton />
                 )}
-                <LoginButton className='btn' variant='outline-primary'>
+                {/* <LoginButton className='btn' variant='outline-primary'>
                   Employee Login
-                </LoginButton>
+                </LoginButton> */}
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
@@ -58,4 +73,4 @@ class SiteNav extends React.Component {
   }
 }
 
-export default SiteNav;
+export default withAuth0(SiteNav);

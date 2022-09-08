@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+import '../css/Modal.css';
 
 class CarForm extends React.Component {
   // handleChange = (e) => {
@@ -45,6 +46,7 @@ class CarForm extends React.Component {
 
     return (
       <>
+
         <Modal show={showCarForm} onHide={handleCarFormModal}>
           <Modal.Header closeButton>
             <Modal.Title>Add Car</Modal.Title>
