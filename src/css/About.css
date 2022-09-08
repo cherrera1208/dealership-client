@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  color: blue;
+  color: whitesmoke;
 
 }
 
@@ -29,13 +29,15 @@ body {
   justify-content: center;
 }
 
-.card-img-top {
+/* .card-img-top {
   position: absolute;
   height: relative;
-}
+} */
 
 .accordion {
   position: absolute;
   top: 380px;
   width: 100%;
 }
+
+
