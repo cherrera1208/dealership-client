@@ -58,7 +58,4 @@ export const Heading = styled.p`
   font-weight: bold;
 `;
 
-export const FooterText = styled.div`
-display: flex;
-text-align: 'center';
-`;
+
