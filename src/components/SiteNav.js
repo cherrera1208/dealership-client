@@ -3,23 +3,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import LoginButton from './LoginButton'
+import Button from 'react-bootstrap/Button';
+import LoginButton from './LoginButton';
 import '../css/SiteNav.css'
+
+
+
+
 
 class SiteNav extends React.Component {
   render() {
     return (
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
-          <img
-            alt=""
-            src="../img/sports-car.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />{' '}
-          Purple Dealership
-        </Navbar.Brand>
+        <Navbar.Brand href="#home">Purple Dealership</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -29,7 +26,7 @@ class SiteNav extends React.Component {
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Car Inventory
+              Car Inventory
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Contact Info</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -39,15 +36,16 @@ class SiteNav extends React.Component {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Item className='btn-container'>
-              <LoginButton className='btn' variant='outline-primary' />
-            </Nav.Item>
+          <Nav.Item className='btn-container'>           
+         <LoginButton className='btn' variant='outline-primary'>Employee Login</LoginButton>
+         </Nav.Item> 
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    )
-  }
-}
-
+          </Navbar.Collapse>
+        </Container>
+    </Navbar>
+     
+          )
+        }
+      }
 
 export default SiteNav;
