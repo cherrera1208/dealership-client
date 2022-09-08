@@ -6,6 +6,7 @@ import {
   Column,
   FooterLink,
   Heading,
+  FooterText,
   } from "./FooterStyles";
   
 const Footer = () => {
@@ -31,13 +32,13 @@ const Footer = () => {
             <FooterLink href="#">Car Deals</FooterLink>
             <FooterLink href="#">Car Dealers</FooterLink>
           </Column>
-          <Column>
+          {/* <Column>
             <Heading>Services</Heading>
             <FooterLink href="#">Writing</FooterLink>
             <FooterLink href="#">Internships</FooterLink>
             <FooterLink href="#">Coding</FooterLink>
             <FooterLink href="#">Teaching</FooterLink>
-          </Column>
+          </Column> */}
           <Column>
             <Heading>Contact Us</Heading>
             <FooterLink href="tel:0121234">(123) 456-789</FooterLink>
@@ -69,7 +70,7 @@ const Footer = () => {
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://www.youtube.com/watch?v=7lSbeT0PddE">
               <i className="fab fa-youtube fa-3x">
                 <span style={{ marginLeft: "10px" }}>
                   Youtube
@@ -77,11 +78,16 @@ const Footer = () => {
               </i>
               
             </FooterLink>
-            <span style={{ color: "purple"}}>&copy; Purple Dealership.</span>
-          </Column>
+            </Column>
         </Row>
-      </Container>
+        <FooterText>
+        <span style={{ color: 'purple' }}>&copy; Purple Dealership.</span> 
+        </FooterText>
+        </Container>
+        
+        
     </Box>
+    
   );
 };
 export default Footer;

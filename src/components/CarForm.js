@@ -16,7 +16,7 @@ class CarForm extends React.Component {
 
     return (
       <>
-        <h1>form</h1>
+        
         <Modal show={showCarForm} onHide={handleCarFormModal}>
           <Modal.Header closeButton>
             <Modal.Title>Add Car</Modal.Title>
