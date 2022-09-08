@@ -2,11 +2,38 @@ import React from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 
 class CarForm extends React.Component {
+  // handleChange = (e) => {
+  // console.log(e.target.value);
+  // this.setState({
+  //   [e.target.name]: e.target.value,
+  // });
+  // };
+
   render() {
     let handleSubmit = (e) => {
       e.preventDefault();
       handleCarFormModal();
-      console.log(e.target);
+
+      let newCar = {
+        make: e.target.make.value,
+        model: e.target.model.value,
+        year: e.target.year.value,
+        car_img: e.target.car_img.value,
+        cylinders: e.target.cylinders.value,
+        miles: e.target.miles.value,
+        highway_mpg: e.target.highway_mpg.value,
+        city_mpg: e.target.city_mpg.value,
+        combination_mpg: e.target.combination_mpg.value,
+        drive: e.target.drive.value,
+        transmission: e.target.transmission.value,
+        class: e.target.class.value,
+        displacement: e.target.displacement.value,
+        fuel: e.target.fuel.value,
+        price: e.target.price.value,
+        description: e.target.description.value,
+        featured: e.target.featured.checked,
+      };
+      this.props.handleCarSubmit(newCar);
     };
 
     const showCarForm = this.props.showCarFormModal;
@@ -35,7 +62,7 @@ class CarForm extends React.Component {
                 <Form.Label>Year</Form.Label>
                 <Form.Control type='number' placeholder='e.g. 2009' />
               </Form.Group>
-              <Form.Group controlId='image'>
+              <Form.Group controlId='car_img'>
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control
                   type='text'
@@ -50,16 +77,16 @@ class CarForm extends React.Component {
                 <Form.Label>Miles</Form.Label>
                 <Form.Control type='number' placeholder='e.g. 24,000' />
               </Form.Group>
-              <Form.Group controlId='highwayMpg'>
+              <Form.Group controlId='highway_mpg'>
                 <Form.Label>Highway MPG</Form.Label>
                 <Form.Control type='number' placeholder='e.g. 23' />
               </Form.Group>
 
-              <Form.Group controlId='cityMpg'>
+              <Form.Group controlId='city_mpg'>
                 <Form.Label>City MPG</Form.Label>
                 <Form.Control type='number' placeholder='e.g. 16' />
               </Form.Group>
-              <Form.Group controlId='combineMpg'>
+              <Form.Group controlId='combination_mpg'>
                 <Form.Label>Combine MPG</Form.Label>
                 <Form.Control type='number' placeholder='e.g. 23' />
               </Form.Group>

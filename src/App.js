@@ -20,7 +20,7 @@ class App extends React.Component {
       featuredCars: [],
       carsInventory: [],
       showCarModal: false,
-      showCarFormModal: false,
+      showCarFormModal: true,
       carModal: {},
     };
   }
@@ -67,6 +67,12 @@ class App extends React.Component {
     });
   };
 
+  handleCarSubmit = async (car) => {
+    let result = await axios.post(`${SERVER}/cars`, car);
+    console.log(car);
+    console.log(result);
+  };
+
   componentDidMount() {
     this.getCars();
   }
@@ -91,6 +97,7 @@ class App extends React.Component {
         <CarForm
           showCarFormModal={this.state.showCarFormModal}
           handleCarFormModal={this.handleCarFormModal}
+          handleCarSubmit={this.handleCarSubmit}
         />
         <Footer />
       </>
