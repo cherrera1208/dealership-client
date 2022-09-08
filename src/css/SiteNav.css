@@ -1,19 +1,31 @@
-.btn-container{
-  display:flex;
+.navbar {
+  background: hsla(339, 100%, 55%, 1);
+
+  background: linear-gradient(0deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+  background: -moz-linear-gradient(0deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+  background: -webkit-linear-gradient(0deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF1B6B", endColorstr="#45CAFF", GradientType=1);
+  border-radius: 0px;
+  margin: .25rem;
+}
+
+.btn-container {
+  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
 .btn {
-color: blueviolet;
-background-color: #E8F9FD;
-font-weight: bold;
+  color: blueviolet;
+  background-color: #E8F9FD;
+  font-weight: bold;
 }
 
 .btn:hover {
   background-color: blueviolet;
   font-weight: bold;
 
-  }
-
- 
+}
