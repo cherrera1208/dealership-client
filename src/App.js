@@ -10,6 +10,7 @@ import CarForm from './components/CarForm';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
+import CarEdit from './components/CarEdit';
 
 const SERVER = process.env.REACT_APP_SERVER;
 
@@ -20,7 +21,9 @@ class App extends React.Component {
       featuredCars: [],
       carsInventory: [],
       showCarModal: false,
-      showCarFormModal: true,
+      showCarFormModal: false,
+      showCarEditModal: false,
+      editMode: true,
       carModal: {},
     };
   }
@@ -40,6 +43,8 @@ class App extends React.Component {
     }
   };
 
+  // deleteCar = async (req, res) => { };
+
   handleCarModal = (show) => {
     show
       ? this.setState({
@@ -47,6 +52,16 @@ class App extends React.Component {
         })
       : this.setState({
           showCarModal: false,
+        });
+  };
+
+  handleCarEditModal = (show) => {
+    show
+      ? this.setState({
+          showCarEditModal: true,
+        })
+      : this.setState({
+          showCarEditModal: false,
         });
   };
 
@@ -61,16 +76,41 @@ class App extends React.Component {
   };
 
   handleCarClick = (car) => {
-    this.handleCarModal(true);
+    let editMode = this.state.editMode;
+    editMode ? this.handleCarEditModal(true) : this.handleCarModal(true);
     this.setState({
       carModal: car,
     });
   };
 
   handleCarSubmit = async (car) => {
-    let result = await axios.post(`${SERVER}/cars`, car);
-    console.log(car);
-    console.log(result);
+    try {
+      let result = await axios.post(`${SERVER}/cars`, car);
+      this.setState({
+        carsInventory: [result.data, ...this.state.carsInventory],
+      });
+    } catch (error) {
+      console.log('we have an error: ', error.response.data);
+    }
+  };
+
+  handleCarDelete = async (car) => {
+    try {
+      let result = await axios.delete(`${SERVER}/cars/${car._id}`);
+      let filteredCars = this.state.carsInventory.filter((el) =>
+        el._id === result.data._id ? false : true
+      );
+      this.setState({
+        carsInventory: filteredCars,
+      });
+      this.handleCarModal(false);
+    } catch (error) {
+      console.log('we have an error: ', error.response.data);
+    }
+  };
+
+  handleCarEdit = async (car) => {
+    console.log('edit');
   };
 
   componentDidMount() {
@@ -82,7 +122,10 @@ class App extends React.Component {
       <>
         {/* {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
         {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>} */}
-        <SiteNav />
+        <SiteNav
+          editMode={this.state.editMode}
+          handleCarFormModal={this.handleCarFormModal}
+        />
         <Header />
         <Main
           featuredCars={this.state.featuredCars}
@@ -98,6 +141,13 @@ class App extends React.Component {
           showCarFormModal={this.state.showCarFormModal}
           handleCarFormModal={this.handleCarFormModal}
           handleCarSubmit={this.handleCarSubmit}
+        />
+        <CarEdit
+          carModal={this.state.carModal}
+          showCarEditModal={this.state.showCarEditModal}
+          handleCarEditModal={this.handleCarEditModal}
+          handleCarDelete={this.handleCarDelete}
+          // handleCarEdit={this.handleCarEdit}
         />
         <Footer />
       </>
