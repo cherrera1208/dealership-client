@@ -18,7 +18,7 @@ class Featured extends React.Component {
     });
     return (
       <>
-        <h2>Featured Cars</h2>
+        <h2></h2>
         <Carousel>{cars}</Carousel>
       </>
     );
