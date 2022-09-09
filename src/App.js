@@ -1,5 +1,4 @@
 import { withAuth0 } from '@auth0/auth0-react';
-import { ReactDOM } from 'react';
 import React from 'react';
 import axios from 'axios';
 import Header from './components/Header';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Image, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 import '../css/Modal.css';
 import axios from 'axios';
 
@@ -27,7 +27,7 @@ class CarForm extends React.Component {
   }
 
   handleChange = (e) => {
-    const apiCondition = this.state.year.toString().length;
+    // const apiCondition = this.state.year.toString().length;
     // console.log(apiCondition);
     // apiCondition >= 3 ? this.getApi() : console.log('');
 
