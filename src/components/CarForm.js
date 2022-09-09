@@ -35,7 +35,6 @@ class CarForm extends React.Component {
         description: e.target.description.value,
         featured: e.target.featured.checked,
       };
-      console.log(newCar);
       this.props.handleCarSubmit(newCar);
     };
 
@@ -46,7 +45,6 @@ class CarForm extends React.Component {
 
     return (
       <>
-
         <Modal show={showCarForm} onHide={handleCarFormModal}>
           <Modal.Header closeButton>
             <Modal.Title>Add Car</Modal.Title>

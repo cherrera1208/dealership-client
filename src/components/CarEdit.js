@@ -2,41 +2,44 @@ import React from 'react';
 import { Button, Form, Image, Modal } from 'react-bootstrap';
 
 class CarEdit extends React.Component {
-  // handleChange = (e) => {
-  // console.log(e.target.value);
-  // this.setState({
-  //   [e.target.name]: e.target.value,
-  // });
-  // };
+  constructor(props) {
+    super(props);
+    this.state = {
+      make: '',
+      model: '',
+      year: '',
+      car_img: '',
+      cylinders: '',
+      miles: '',
+      highway_mpg: '',
+      city_mpg: '',
+      combination_mpg: '',
+      drive: '',
+      transmission: '',
+      class: '',
+      displacement: '',
+      color: '',
+      price: '',
+      description: '',
+    };
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  componentDidMount() {
+    this.setState({
+      ...this.props.carModal,
+    });
+  }
 
   render() {
     let handleSubmit = (e) => {
       e.preventDefault();
-      // handleCarFormModal();
-
-      let newCar = {
-        _id: this.props.carModal._id,
-        make: e.target.make.value,
-        model: e.target.model.value,
-        year: e.target.year.value,
-        car_img: e.target.car_img.value,
-        cylinders: e.target.cylinders.value,
-        miles: e.target.miles.value,
-        highway_mpg: e.target.highway_mpg.value,
-        city_mpg: e.target.city_mpg.value,
-        combination_mpg: e.target.combination_mpg.value,
-        drive: e.target.drive.value,
-        transmission: e.target.transmission.value,
-        class: e.target.class.value,
-        displacement: e.target.displacement.value,
-        fuel: e.target.fuel.value,
-        price: e.target.price.value,
-        description: e.target.description.value,
-        featured: e.target.featured.checked,
-      };
-      this.props.handleCarEdit(newCar);
-      // this.props.showCarEditModal();
-      // console.log(this.props);
+      this.props.handleCarEdit(this.state);
       handleCarEditModal();
     };
 
@@ -49,11 +52,14 @@ class CarEdit extends React.Component {
       this.props.handleCarDelete(curCar);
       handleCarEditModal();
     };
-    // console.log(this.props);
 
     return (
       <>
-        <Modal show={showCarEditModal} onHide={handleCarEditModal}>
+        <Modal
+          show={showCarEditModal}
+          onHide={handleCarEditModal}
+          id='CarEditModal'
+        >
           <Modal.Header closeButton>
             <Modal.Title>Edit Car</Modal.Title>
           </Modal.Header>
@@ -65,86 +71,165 @@ class CarEdit extends React.Component {
                 <Form.Control
                   type='text'
                   placeholder='e.g. Mazda'
-                  // value={curCar.make}
+                  onChange={this.handleChange}
+                  value={this.state.make}
                 />
               </Form.Group>
               <Form.Group controlId='model'>
                 <Form.Label>Model</Form.Label>
-                <Form.Control type='text' placeholder='e.g. RX8' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. RX8'
+                  onChange={this.handleChange}
+                  value={this.state.model}
+                />
               </Form.Group>
               <Form.Group controlId='year'>
                 <Form.Label>Year</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 2009' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 2009'
+                  onChange={this.handleChange}
+                  value={this.state.year}
+                />
               </Form.Group>
               <Form.Group controlId='car_img'>
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control
                   type='text'
                   placeholder='e.g. www.googledrive.com/carpicture.jpg'
+                  onChange={this.handleChange}
+                  value={this.state.car_img}
                 />
               </Form.Group>
               <Form.Group controlId='cylinders'>
                 <Form.Label>Cylinders</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 2' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 2'
+                  onChange={this.handleChange}
+                  value={this.state.cylinders}
+                />
               </Form.Group>
               <Form.Group controlId='miles'>
                 <Form.Label>Miles</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 24,000' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 24,000'
+                  onChange={this.handleChange}
+                  value={this.state.miles}
+                />
               </Form.Group>
               <Form.Group controlId='highway_mpg'>
                 <Form.Label>Highway MPG</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 23' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 23'
+                  onChange={this.handleChange}
+                  value={this.state.highway_mpg}
+                />
               </Form.Group>
 
               <Form.Group controlId='city_mpg'>
                 <Form.Label>City MPG</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 16' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 16'
+                  onChange={this.handleChange}
+                  value={this.state.city_mpg}
+                />
               </Form.Group>
               <Form.Group controlId='combination_mpg'>
                 <Form.Label>Combine MPG</Form.Label>
-                <Form.Control type='number' placeholder='e.g. 23' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. 23'
+                  onChange={this.handleChange}
+                  value={this.state.combination_mpg}
+                />
               </Form.Group>
               <Form.Group controlId='drive'>
                 <Form.Label>Drive</Form.Label>
-                <Form.Control type='text' placeholder='e.g. rwd' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. rwd'
+                  onChange={this.handleChange}
+                  value={this.state.drive}
+                />
               </Form.Group>
               <Form.Group controlId='transmission'>
                 <Form.Label>Transmission</Form.Label>
-                <Form.Control type='text' placeholder='e.g. manual' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. manual'
+                  onChange={this.handleChange}
+                  value={this.state.transmission}
+                />
               </Form.Group>
               <Form.Group controlId='class'>
                 <Form.Label>Class</Form.Label>
-                <Form.Control type='text' placeholder='e.g. sedan' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. sedan'
+                  onChange={this.handleChange}
+                  value={this.state.class}
+                />
               </Form.Group>
               <Form.Group controlId='displacement'>
                 <Form.Label>Displacement</Form.Label>
-                <Form.Control type='text' placeholder='e.g. 1.3' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. 1.3'
+                  onChange={this.handleChange}
+                  value={this.state.displacement}
+                />
               </Form.Group>
               <Form.Group controlId='fuel'>
                 <Form.Label>Fuel type</Form.Label>
-                <Form.Control type='text' placeholder='e.g. gasoline' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. gasoline'
+                  onChange={this.handleChange}
+                  value={this.state.fuel_type}
+                />
               </Form.Group>
               <Form.Group controlId='color'>
                 <Form.Label>Color</Form.Label>
-                <Form.Control type='text' placeholder='e.g. red' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. red'
+                  onChange={this.handleChange}
+                  value={this.state.color}
+                />
               </Form.Group>
               <Form.Group controlId='price'>
                 <Form.Label>Price</Form.Label>
-                <Form.Control type='number' placeholder='e.g. $30,000' />
+                <Form.Control
+                  type='number'
+                  placeholder='e.g. $30,000'
+                  onChange={this.handleChange}
+                  value={this.state.price}
+                />
               </Form.Group>
               <Form.Group controlId='description'>
                 <Form.Label>description</Form.Label>
                 <Form.Control
                   type='text'
                   placeholder='e.g. Description of the car'
+                  onChange={this.handleChange}
+                  value={this.state.description}
                 />
               </Form.Group>
               <Form.Group controlId='featured'>
-                <Form.Check type='checkbox' label='Featured' />
+                <Form.Check
+                  type='checkbox'
+                  label='Featured'
+                  // onChange={this.handleChange}
+                  // value={this.state.featured}
+                />
               </Form.Group>
               <Button type='submit'>Save Changes</Button>
               <Button
-                // onClick={() => this.props.handleCarDelete(curCar)}
                 onClick={handleDelete}
                 style={{ backgroundColor: 'red', color: 'black' }}
               >
