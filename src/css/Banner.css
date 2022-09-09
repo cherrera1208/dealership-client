@@ -26,10 +26,10 @@
   align-items: center;
   color: white;
   background-color: black;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
       rgb(0, 0, 0, 0.5)),
-    url(../image/Background.jpg);
+    url(../image/InvBanner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -10px */
+  background-position: -10px
 }
