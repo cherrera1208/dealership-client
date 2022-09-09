@@ -1,6 +1,9 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import '../css/Cars.css';
+import '../css/Banner.css';
+
+
 
 class Cars extends React.Component {
   render() {
@@ -23,8 +26,12 @@ class Cars extends React.Component {
 
     return (
       <>
-        <h1>Our Inventory</h1>
-        <div className='cars-container'>{carsList}</div>
+        <div>
+          <div className='inv_banner'>
+            <h1>Our Inventory</h1>
+          </div>
+          <div className='cars-container'>{carsList}</div>
+        </div>
       </>
     );
   }

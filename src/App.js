@@ -8,9 +8,6 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import CarModal from './components/CarModal';
 import CarForm from './components/CarForm';
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
-import Profile from './components/Profile';
 import CarEdit from './components/CarEdit';
 
 const SERVER = process.env.REACT_APP_SERVER;
@@ -58,31 +55,31 @@ class App extends React.Component {
   handleCarModal = (show) => {
     show
       ? this.setState({
-          showCarModal: true,
-        })
+        showCarModal: true,
+      })
       : this.setState({
-          showCarModal: false,
-        });
+        showCarModal: false,
+      });
   };
 
   handleCarEditModal = (show) => {
     show
       ? this.setState({
-          showCarEditModal: true,
-        })
+        showCarEditModal: true,
+      })
       : this.setState({
-          showCarEditModal: false,
-        });
+        showCarEditModal: false,
+      });
   };
 
   handleCarFormModal = (show) => {
     show
       ? this.setState({
-          showCarFormModal: true,
-        })
+        showCarFormModal: true,
+      })
       : this.setState({
-          showCarFormModal: false,
-        });
+        showCarFormModal: false,
+      });
   };
 
   handleCarClick = (car) => {
@@ -153,7 +150,7 @@ class App extends React.Component {
           featuredCars={this.state.featuredCars}
           carsInventory={this.state.carsInventory}
           handleCarClick={this.handleCarClick}
-          // editMode={editMode}
+        // editMode={editMode}
         />
         <CarModal
           handleCarModal={this.handleCarModal}
