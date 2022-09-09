@@ -1,43 +1,31 @@
-body {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5));
-  /* url(../image/Jeffrey\ Smith.jpg); */
-  background-color: yellow;
-  /* background-size: cover; */
-}
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    color: whitesmoke;
 
+  }
 
-.list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-  color: whitesmoke;
+  .card-container {
+    display: flex;
+    justify-content: space-between;
 
-}
+  }
 
-.card-container {
-  display: flex;
-  justify-content: space-between;
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
 
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-}
-
-/* .card-img-top {
+  /* .card-img-top {
   position: absolute;
   height: relative;
 } */
 
-.accordion {
-  position: absolute;
-  top: 380px;
-  width: 100%;
-}
-
-
+  .accordion {
+    position: absolute;
+    top: 380px;
+    width: 100%;
+  }
