@@ -44,6 +44,17 @@ class App extends React.Component {
     }
   };
 
+  getApi = async (req, res) => {
+    try {
+      let result = await axios.get(
+        `http://localhost:3001/api?make=honda&model=civic&year=2002`
+      );
+      console.log(result.data);
+    } catch (error) {
+      console.log('we have an error: ', error.response);
+    }
+  };
+
   handleCarModal = (show) => {
     show
       ? this.setState({
@@ -121,6 +132,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCars();
+    // this.getApi();
   }
 
   render() {
