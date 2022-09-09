@@ -62,7 +62,11 @@ class CarEdit extends React.Component {
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId='make' required>
                 <Form.Label>Make</Form.Label>
-                <Form.Control type='text' placeholder='e.g. Mazda' />
+                <Form.Control
+                  type='text'
+                  placeholder='e.g. Mazda'
+                  // value={curCar.make}
+                />
               </Form.Group>
               <Form.Group controlId='model'>
                 <Form.Label>Model</Form.Label>
