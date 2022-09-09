@@ -8,6 +8,7 @@ class Cars extends React.Component {
     const carsInventory = this.props.carsInventory;
 
     let carsList = carsInventory.map((car, idx) => {
+      console.log(car);
       return (
         <Card
           onClick={() => handleCarClick(car)}
@@ -16,7 +17,7 @@ class Cars extends React.Component {
         >
           <Card.Img variant='top' src={car.car_img} />
           <Card.Title>{`${car.make} ${car.model}`}</Card.Title>
-          <Card.Text>Get Smoked</Card.Text>
+          <Card.Text>{car.description}</Card.Text>
         </Card>
       );
     });
