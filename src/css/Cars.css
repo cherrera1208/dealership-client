@@ -1,4 +1,5 @@
 .cars-container {
+  padding: 1rem;
   margin: auto;
   justify-content: space-around;
   display: flex;

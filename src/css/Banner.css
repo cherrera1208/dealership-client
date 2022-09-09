@@ -1,0 +1,35 @@
+.header_banner {
+  width: 99%;
+  margin: auto;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgb(0, 0, 0, 0.5)),
+    url(../image/Background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -10px
+}
+
+
+.inv_banner {
+  width: 99%;
+  margin: auto;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: black;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgb(0, 0, 0, 0.5)),
+    url(../image/Background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -10px */
+}

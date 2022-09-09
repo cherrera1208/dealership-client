@@ -20,13 +20,14 @@ class SiteNav extends React.Component {
           <Navbar.Brand href="/">
             <img
               alt=""
-              //TODO: this img is broken
               src={Logo}
               width="30"
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            Purple DealerShip
+
+            Purple Dealership
+
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
