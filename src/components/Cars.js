@@ -19,7 +19,7 @@ class Cars extends React.Component {
         >
           <Card.Img variant='top' src={car.car_img} />
           <Card.Title>{`${car.make} ${car.model}`}</Card.Title>
-          <Card.Text>Get Smoked</Card.Text>
+          <Card.Text>{car.description}</Card.Text>
         </Card>
       );
     });

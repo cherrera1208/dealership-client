@@ -11,7 +11,7 @@ class Featured extends React.Component {
           <img className='w-100' src={car.car_img} alt='car' />
           <Carousel.Caption>
             <h3>{`${car.make} ${car.model}`}</h3>
-            <p>Best handling car in it's class. Get smoked 🚗💨</p>
+            <p>{car.description || '🚗💨'}</p>
           </Carousel.Caption>
         </Carousel.Item>
       );

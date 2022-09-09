@@ -1,4 +1,5 @@
 import { withAuth0 } from '@auth0/auth0-react';
+import { ReactDOM } from 'react';
 import React from 'react';
 import axios from 'axios';
 import Header from './components/Header';
@@ -40,7 +41,16 @@ class App extends React.Component {
     }
   };
 
-  // deleteCar = async (req, res) => { };
+  getApi = async (req, res) => {
+    try {
+      let result = await axios.get(
+        `http://localhost:3001/api?make=honda&model=civic&year=2002`
+      );
+      console.log(result.data);
+    } catch (error) {
+      console.log('we have an error: ', error.response);
+    }
+  };
 
   handleCarModal = (show) => {
     show
@@ -73,7 +83,6 @@ class App extends React.Component {
   };
 
   handleCarClick = (car) => {
-    // let editMode = this.state.editMode;
     this.props.auth0.isAuthenticated
       ? this.handleCarEditModal(true)
       : this.handleCarModal(true);
@@ -109,7 +118,6 @@ class App extends React.Component {
   };
 
   handleCarEdit = async (car) => {
-    console.log(car);
     try {
       let result = await axios.put(`${SERVER}/cars/${car._id}`, car);
       this.getCars();
@@ -121,6 +129,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCars();
+    // this.getApi();
   }
 
   render() {
@@ -153,13 +162,15 @@ class App extends React.Component {
           handleCarFormModal={this.handleCarFormModal}
           handleCarSubmit={this.handleCarSubmit}
         />
-        <CarEdit
-          carModal={this.state.carModal}
-          showCarEditModal={this.state.showCarEditModal}
-          handleCarEditModal={this.handleCarEditModal}
-          handleCarDelete={this.handleCarDelete}
-          handleCarEdit={this.handleCarEdit}
-        />
+        {this.state.showCarEditModal && (
+          <CarEdit
+            carModal={this.state.carModal}
+            showCarEditModal={this.state.showCarEditModal}
+            handleCarEditModal={this.handleCarEditModal}
+            handleCarDelete={this.handleCarDelete}
+            handleCarEdit={this.handleCarEdit}
+          />
+        )}
         <Footer />
       </>
     );

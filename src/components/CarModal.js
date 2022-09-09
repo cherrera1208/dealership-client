@@ -17,9 +17,32 @@ class CarModal extends React.Component {
         <Image src={car.car_img} />
         <Modal.Body>
           <ListGroup>
-            <ListGroup.Item>{`Make: ${car.make}`}</ListGroup.Item>
-            <ListGroup.Item>{`Model: ${car.model}`}</ListGroup.Item>
-            <ListGroup.Item>{`Year: ${car.year}`}</ListGroup.Item>
+            <ListGroup.Item>{`Make: ${car.make || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Model: ${car.model || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Year: ${car.year || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Color: ${car.color || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Drive: ${car.drive || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Transmission: ${
+              car.transmission || ''
+            }`}</ListGroup.Item>
+            <ListGroup.Item>{`Cylinders: ${
+              car.cylinders || ''
+            }`}</ListGroup.Item>
+            <ListGroup.Item>{`Displacement: ${
+              car.displacement || ''
+            }`}</ListGroup.Item>
+            <ListGroup.Item>{`Highway MPG: ${
+              car.highway_mpg || ''
+            }`}</ListGroup.Item>
+            <ListGroup.Item>{`City MPG: ${car.city_mpg || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Combination MPG: ${
+              car.combination_mpg || ''
+            }`}</ListGroup.Item>
+            <ListGroup.Item>{`Miles: ${car.miles || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Price: ${car.price || ''}`}</ListGroup.Item>
+            <ListGroup.Item>{`Description: ${
+              car.description || ''
+            }`}</ListGroup.Item>
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>
