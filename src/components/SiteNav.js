@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import { Button } from 'react-bootstrap';
+import Logo from '../image/Logo.png'
 import '../css/SiteNav.css';
 
 class SiteNav extends React.Component {
@@ -20,12 +21,12 @@ class SiteNav extends React.Component {
             <img
               alt=""
               //TODO: this img is broken
-              src="../image/sports-car-small.png"
+              src={Logo}
               width="30"
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            React Bootstrap
+            Purple DealerShip
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
