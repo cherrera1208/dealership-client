@@ -15,6 +15,7 @@ class CarEdit extends React.Component {
       // handleCarFormModal();
 
       let newCar = {
+        _id: this.props.carModal._id,
         make: e.target.make.value,
         model: e.target.model.value,
         year: e.target.year.value,
@@ -33,7 +34,10 @@ class CarEdit extends React.Component {
         description: e.target.description.value,
         featured: e.target.featured.checked,
       };
-      this.props.handleCarSubmit(newCar);
+      this.props.handleCarEdit(newCar);
+      // this.props.showCarEditModal();
+      // console.log(this.props);
+      handleCarEditModal();
     };
 
     let curCar = this.props.carModal;
@@ -45,6 +49,7 @@ class CarEdit extends React.Component {
       this.props.handleCarDelete(curCar);
       handleCarEditModal();
     };
+    // console.log(this.props);
 
     return (
       <>
@@ -133,18 +138,17 @@ class CarEdit extends React.Component {
               <Form.Group controlId='featured'>
                 <Form.Check type='checkbox' label='Featured' />
               </Form.Group>
+              <Button type='submit'>Save Changes</Button>
+              <Button
+                // onClick={() => this.props.handleCarDelete(curCar)}
+                onClick={handleDelete}
+                style={{ backgroundColor: 'red', color: 'black' }}
+              >
+                Delete Car
+              </Button>
             </Form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button>Save Changes</Button>
-            <Button
-              // onClick={() => this.props.handleCarDelete(curCar)}
-              onClick={handleDelete}
-              style={{ backgroundColor: 'red', color: 'black' }}
-            >
-              Delete Car
-            </Button>
-          </Modal.Footer>
+          <Modal.Footer></Modal.Footer>
         </Modal>
       </>
     );
