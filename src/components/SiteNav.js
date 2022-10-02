@@ -11,8 +11,7 @@ import '../css/SiteNav.css';
 
 class SiteNav extends React.Component {
   render() {
-    const editMode = this.props.editMode;
-    console.log(':: : SiteNav : render : editMode', editMode);
+    // const editMode = this.props.editMode;
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
@@ -35,13 +34,15 @@ class SiteNav extends React.Component {
               <Nav.Link href='mailto:cherrera.dev@gmail.com'>Contact</Nav.Link>
             </Nav>
             <Nav>
+
               <Nav.Item className='btn-container'>
-                {/* <Button onClick={() => this.setState({ editMode: true }) && alert('test')}>
-                  DEMO
-                </Button> */}
-              </Nav.Item>
-              <Nav.Item className='btn-container'>
-                {editMode ? (
+                <Button onClick={() => this.props.handleCarFormModal(true)}>
+                  Add Car
+                </Button>
+                {this.props.auth0.isAuthenticated
+                  ? <LogoutButton />
+                  : <LoginButton />}
+                {/* {editMode ? (
                   (<Button onClick={() => this.props.handleCarFormModal(true)}>
                     Add Car
                   </Button>)
@@ -49,7 +50,7 @@ class SiteNav extends React.Component {
                   this.props.auth0.isAuthenticated
                     ? <LogoutButton />
                     : <LoginButton />
-                )}
+                )} */}
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

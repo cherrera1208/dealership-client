@@ -224,8 +224,8 @@ class CarEdit extends React.Component {
                 <Form.Check
                   type='checkbox'
                   label='Featured'
-                  // onChange={this.handleChange}
-                  // value={this.state.featured}
+                // onChange={this.handleChange}
+                // value={this.state.featured}
                 />
               </Form.Group>
               <Button type='submit'>Save Changes</Button>

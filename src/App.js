@@ -20,7 +20,6 @@ class App extends React.Component {
       showCarModal: false,
       showCarFormModal: false,
       showCarEditModal: false,
-
       editMode: true,
       carModal: {},
     };
@@ -82,7 +81,8 @@ class App extends React.Component {
   };
 
   handleCarClick = (car) => {
-    this.props.auth0.isAuthenticated
+    this.props.editMode = true
+      // this.props.auth0.isAuthenticated
       ? this.handleCarEditModal(true)
       : this.handleCarModal(true);
     this.setState({
@@ -131,12 +131,12 @@ class App extends React.Component {
   }
 
   render() {
-    let editMode = false;
-    if (this.props.auth0.isAuthenticated) {
-      editMode = true;
-    } else if (this.props.handleCarEditModal) {
-      editMode = true;
-    }
+    let editMode = true;
+    // if (this.props.auth0.isAuthenticated) {
+    //   editMode = true;
+    // } else if (this.props.handleCarEditModal) {
+    //   editMode = true;
+    // }
     return (
       <>
         <SiteNav
@@ -176,7 +176,7 @@ class App extends React.Component {
   }
 }
 
-// alert('\'Log In\' button showcases auth functionality to add or edit a car, but the \'DEMO\' button is included for convenience')
+alert('Edit Mode is enabled for convenience, you do not have to log in')
 
 
 export default withAuth0(App);

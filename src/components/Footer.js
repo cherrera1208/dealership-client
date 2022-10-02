@@ -53,7 +53,14 @@ const Footer = () => {
             </FooterLink>
             <FooterLink href="https://www.linkedin.com/in/cherrera1208/">
               <i className="fab fa-linkedin fa-3x">
-                <span style={{ marginLeft: "10px" }}>
+                <span style={{ marginLeft: "100px" }}>
+                  LinkedIn
+                </span>
+              </i>
+            </FooterLink>
+            <FooterLink href="https://cherrera-dev.netlify.app/">
+              <i className="fa-regular fa-address-card fa-3x">
+                <span style={{ marginLeft: "100px" }}>
                   LinkedIn
                 </span>
               </i>
