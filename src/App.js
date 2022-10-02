@@ -29,7 +29,6 @@ class App extends React.Component {
     try {
       let result = await axios.get(`${SERVER}/cars`);
       this.setState({
-        // Change for different data after we get more in the database
         featuredCars: result.data,
         carsInventory: result.data,
       });
@@ -128,18 +127,17 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getCars();
-    // this.getApi();
   }
 
   render() {
     let editMode = false;
     if (this.props.auth0.isAuthenticated) {
       editMode = true;
+    } else if (this.props.handleCarEditModal) {
+      editMode = true;
     }
     return (
       <>
-        {/* {this.props.auth0.isAuthenticated ? <LogoutButton /> : <LoginButton />};
-        {this.props.auth0.isAuthenticated ? <Profile /> : <h2>Please Login</h2>} */}
         <SiteNav
           editMode={editMode}
           handleCarFormModal={this.handleCarFormModal}
@@ -149,7 +147,7 @@ class App extends React.Component {
           featuredCars={this.state.featuredCars}
           carsInventory={this.state.carsInventory}
           handleCarClick={this.handleCarClick}
-        // editMode={editMode}
+          editMode={editMode}
         />
         <CarModal
           handleCarModal={this.handleCarModal}
@@ -175,5 +173,8 @@ class App extends React.Component {
     );
   }
 }
+
+// alert('\'Log In\' button showcases auth functionality to add or edit a car, but the \'DEMO\' button is included for convenience')
+
 
 export default withAuth0(App);

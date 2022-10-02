@@ -10,11 +10,11 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5),
       rgb(0, 0, 0, 0.5)),
     url(../image/Background.jpg);
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -10px
 }
-
 
 .inv_banner {
   width: 99%;
@@ -31,5 +31,5 @@
     url(../image/InvBanner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -10px
+  background-position: -0px
 }

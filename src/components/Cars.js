@@ -3,8 +3,6 @@ import { Card } from 'react-bootstrap';
 import '../css/Cars.css';
 import '../css/Banner.css';
 
-
-
 class Cars extends React.Component {
   render() {
     const handleCarClick = this.props.handleCarClick;

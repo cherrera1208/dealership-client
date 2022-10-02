@@ -3,7 +3,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import { Button } from 'react-bootstrap';
@@ -13,7 +13,6 @@ import '../css/SiteNav.css';
 class SiteNav extends React.Component {
   render() {
     const editMode = this.props.editMode;
-    // const handleCarFormModal = this.props.handleCarFormModal(true);
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
@@ -32,11 +31,10 @@ class SiteNav extends React.Component {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link href='http://localhost:3000/about'>About</Nav.Link>
-              <Nav.Link href='http://localhost:3000'>Car Inventory</Nav.Link>
-              <Nav.Link href='#http://localhost:3000'>Contact Use</Nav.Link>
-              <NavDropdown title='Dropdown' id='collasible-nav-dropdown'>
-                <NavDropdown.Item href='http://localhost:3000/about'>
+              <Nav.Link href='https://cherrerawebdev.netlify.app/about'>About</Nav.Link>
+              <Nav.Link href='#http://localhost:3000'>Contact</Nav.Link>
+              {/* <NavDropdown title='Dropdown' id='collasible-nav-dropdown'>
+                <NavDropdown.Item href='http://localhost:3000/'>
                   About
                 </NavDropdown.Item>
                 <NavDropdown.Item href='http://localhost:3000/'>
@@ -46,12 +44,18 @@ class SiteNav extends React.Component {
                   Contact Info
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href='http://localhost:3000/about'>
+                <NavDropdown.Item href='http://localhost:3000/'>
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
             <Nav>
+              <Nav.Item className='btn-container'>
+                <Button onClick={(car) => this.props.handleCarFormModal(true)
+                }>
+                  DEMO
+                </Button>
+              </Nav.Item>
               <Nav.Item className='btn-container'>
                 {editMode ? (
                   <Button onClick={() => this.props.handleCarFormModal(true)}>
@@ -62,14 +66,11 @@ class SiteNav extends React.Component {
                     ? <LogoutButton />
                     : <LoginButton />
                 )}
-                {/* <LoginButton className='btn' variant='outline-primary'>
-                  Employee Login
-                </LoginButton> */}
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar >
     );
   }
 }

@@ -10,7 +10,7 @@ class Main extends React.Component {
           featuredCars={this.props.featuredCars}
           handleCarClick={this.props.handleCarClick}
         />
-        <Cars
+        <Cars id='inventory'
           carsInventory={this.props.carsInventory}
           handleCarClick={this.props.handleCarClick}
         />

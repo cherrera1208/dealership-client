@@ -2,49 +2,40 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
   padding: 80px 60px;
-
   background: #9fc9f3;
-
-  bottom: 0;
-  width: 100%;
-
-  @media (max-width: 1000px) {
-    padding: 70px 30px;
   }
 `;
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  /* background: red; */
+  max-width: 80vw;
+  margin:  auto;
 `;
 
-export const Column = styled.div`
+export const Column = styled.p`
+  // border: 1px solid white;
   display: flex;
   flex-direction: column;
-  text-align: left;
-  margin-left: 60px;
-`;
+  `;
 
 export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  grid-gap: 20px;
+  }
+`;
 
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+export const FooterText = styled.div`
+  // border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
   }
 `;
 
 export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 24px;
   text-decoration: none;
-
+  padding: 0rem 2rem 0rem .5rem;
+  width: 10%;
   &:hover {
     color: #a460ed;
     transition: 200ms ease-in;
@@ -52,10 +43,14 @@ export const FooterLink = styled.a`
 `;
 
 export const Heading = styled.p`
+  border: 1px solid white;
   font-size: 24px;
   color: #fff;
-  margin-bottom: 40px;
   font-weight: bold;
 `;
 
-
+export const Text = styled.p`
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+`;

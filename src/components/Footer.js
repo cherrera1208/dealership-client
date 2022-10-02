@@ -5,85 +5,63 @@ import {
   Row,
   Column,
   FooterLink,
+  FooterText,
   Heading,
-  
-  } from "./FooterStyles";
-  
+} from "./FooterStyles";
+
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "purple", 
-                   textAlign: "center", 
-                   marginTop: "-50px" }}>
-        Purple Car Dealer: A Car site for Car Lovers
+      <h1 style={{
+        color: "purple",
+        textAlign: "center",
+        marginTop: "-50px",
+        marginBottom: "20px"
+      }}>
+        Purple Car Dealer: A Car Site for Car Lovers
       </h1>
       <Container>
         <Row>
           <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
+            <Heading>About: </Heading>
+            <FooterText>
+              <p style={{
+                color: "white",
+                fontSize: "1.5rem",
+              }}>Name: Carlos Herrera</p>
+              <p style={{
+                color: "white",
+                fontSize: "1.5rem",
+              }}>Role: Full-Stack Developer</p>
+              <p style={{
+                color: "white",
+                fontSize: "1.5rem",
+              }}>Mission: To learn, grow, and deliver with commitment to integrity and excellence</p>
+            </FooterText>
           </Column>
           <Column>
-            <Heading>Shop for a Car</Heading>
-            <FooterLink href="#">New Cars</FooterLink>
-            <FooterLink href="#">Used Cars</FooterLink>
-            <FooterLink href="#">Car Deals</FooterLink>
-            <FooterLink href="#">Car Dealers</FooterLink>
+            <Heading>Contact: </Heading>
+            <FooterLink href="mailto:cherrera.dev@gmail.com"> cherrera.dev@gmail.com </FooterLink>
           </Column>
-          {/* <Column>
-            <Heading>Services</Heading>
-            <FooterLink href="#">Writing</FooterLink>
-            <FooterLink href="#">Internships</FooterLink>
-            <FooterLink href="#">Coding</FooterLink>
-            <FooterLink href="#">Teaching</FooterLink>
-          </Column> */}
-          <Column>
-            <Heading>Contact Us</Heading>
-            <FooterLink href="tel:0121234">(123) 456-789</FooterLink>
-            <FooterLink href="mailto:support@example.com"> support@example.com </FooterLink>
-            <FooterLink href="mailto:sales@example.com"> sales@example.com </FooterLink>
-           
-          </Column>
-          <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="https://www.facebook.com/">
-            <i className="fa-brands fa-facebook fa-3x">
+          <Row>
+            <Heading>Social Media: </Heading>
+            <FooterLink href="https://github.com/cherrera1208">
+              <i className="fa-brands fa-github fa-3x">
                 <span style={{ marginLeft: "10px" }}>
-                  Facebook
+                  Github
                 </span></i>
-              
-           
             </FooterLink>
-            <FooterLink href="https://www.instagram.com/">
-              <i className="fab fa-instagram fa-3x">
+            <FooterLink href="https://www.linkedin.com/in/cherrera1208/">
+              <i className="fab fa-linkedin fa-3x">
                 <span style={{ marginLeft: "10px" }}>
-                  Instagram
+                  LinkedIn
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="https://twitter.com/">
-              <i className="fab fa-twitter fa-3x">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
-            </FooterLink>
-            <FooterLink href="https://www.youtube.com/watch?v=7lSbeT0PddE">
-              <i className="fab fa-youtube fa-3x">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
-              
-            </FooterLink>
-            </Column>
+          </Row>
         </Row>
       </Container>
     </Box>
-
   );
 };
 export default Footer;
-
