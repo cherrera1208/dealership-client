@@ -20,6 +20,7 @@ class App extends React.Component {
       showCarModal: false,
       showCarFormModal: false,
       showCarEditModal: false,
+
       editMode: true,
       carModal: {},
     };
@@ -141,6 +142,7 @@ class App extends React.Component {
         <SiteNav
           editMode={editMode}
           handleCarFormModal={this.handleCarFormModal}
+          handleCarDemo={this.handleCarDemo}
         />
         <Header />
         <Main

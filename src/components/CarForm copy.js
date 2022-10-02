@@ -3,13 +3,6 @@ import { Button, Form, Modal } from 'react-bootstrap';
 import '../css/Modal.css';
 
 class CarForm extends React.Component {
-  // handleChange = (e) => {
-  // console.log(e.target.value);
-  // this.setState({
-  //   [e.target.name]: e.target.value,
-  // });
-  // };
-
   render() {
     let handleSubmit = (e) => {
       e.preventDefault();

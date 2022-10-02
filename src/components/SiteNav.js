@@ -3,7 +3,6 @@ import { withAuth0 } from '@auth0/auth0-react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import { Button } from 'react-bootstrap';
@@ -13,6 +12,7 @@ import '../css/SiteNav.css';
 class SiteNav extends React.Component {
   render() {
     const editMode = this.props.editMode;
+    console.log(':: : SiteNav : render : editMode', editMode);
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
@@ -32,35 +32,19 @@ class SiteNav extends React.Component {
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
               <Nav.Link href='https://cherrerawebdev.netlify.app/about'>About</Nav.Link>
-              <Nav.Link href='#http://localhost:3000'>Contact</Nav.Link>
-              {/* <NavDropdown title='Dropdown' id='collasible-nav-dropdown'>
-                <NavDropdown.Item href='http://localhost:3000/'>
-                  About
-                </NavDropdown.Item>
-                <NavDropdown.Item href='http://localhost:3000/'>
-                  Car Inventory
-                </NavDropdown.Item>
-                <NavDropdown.Item href='http://localhost:3000/'>
-                  Contact Info
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href='http://localhost:3000/'>
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown> */}
+              <Nav.Link href='mailto:cherrera.dev@gmail.com'>Contact</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Item className='btn-container'>
-                <Button onClick={(car) => this.props.handleCarFormModal(true)
-                }>
+                {/* <Button onClick={() => this.setState({ editMode: true }) && alert('test')}>
                   DEMO
-                </Button>
+                </Button> */}
               </Nav.Item>
               <Nav.Item className='btn-container'>
                 {editMode ? (
-                  <Button onClick={() => this.props.handleCarFormModal(true)}>
+                  (<Button onClick={() => this.props.handleCarFormModal(true)}>
                     Add Car
-                  </Button>
+                  </Button>)
                 ) : (
                   this.props.auth0.isAuthenticated
                     ? <LogoutButton />
